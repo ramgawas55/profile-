@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="2026 Professional Portfolio — Linux-themed">
+<title>2026 • Linux Professional Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="brand">
+    <span class="prompt-user">user</span><span>@</span><span class="prompt-host">linux</span><span>:</span><span class="prompt-path">~</span><span>$</span>
+    <span class="brand-title">2026 Professional</span>
+  </div>
+  <nav class="site-nav" aria-label="Primary">
+    <button class="nav-link" type="button" data-section="about">about</button>
+    <button class="nav-link" type="button" data-section="skills">skills</button>
+    <button class="nav-link" type="button" data-section="projects">projects</button>
+    <button class="nav-link" type="button" data-section="contact">contact</button>
+    <button class="toggle-theme" type="button" title="Toggle theme">theme</button>
+  </nav>
+</header>
+
+<main class="container">
+  <section class="terminal" aria-live="polite">
+    <div class="terminal-header">
+      <div class="traffic">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+      </div>
+      <div class="terminal-title">tty0</div>
+    </div>
+    <div id="terminal-body" class="terminal-body"></div>
+  </section>
+
+  <section class="content">
+    <article id="about" class="panel active">
+      <h1>About</h1>
+      <p>I am a passionate Cloud Computing and DevOps engineering student focused on designing, deploying, and managing scalable infrastructure. I completed the CCNA module and am strengthening my skills in Linux, while exploring automation, containerization, and cloud technologies. I enjoy solving complex system challenges and aim to build reliable, efficient, and secure solutions through continuous learning and hands-on practice.</p>
+      <ul class="contact">
+        <li>Name: RAM SUNIL GAWAS</li>
+        <li>Current Location: Dahisar, Mumbai</li>
+        <li>Date of Birth: 03 Jun 2004</li>
+        <li>Gender: Male</li>
+      </ul>
+      <h1>Education</h1>
+      <ul class="skills">
+        <li>B.Sc (Information Technology), Mumbai University — 2023 to 2025</li>
+        <li>Class XII: 59.33% (2022)</li>
+        <li>Class X: 66.00% (2020)</li>
+        <li>Skills development at NetTech India Institute, Andheri — CCNA and Linux</li>
+      </ul>
+    </article>
+    <article id="skills" class="panel">
+      <h1>Server, Network & Security</h1>
+      <ul class="skills">
+        <li>Samba Server installation, configuration, and management</li>
+        <li>DHCP Server design and implementation for LAN addressing</li>
+        <li>Apache HTTP Server setup with SSL/TLS on CentOS/RHEL</li>
+        <li>OpenSSL key, CSR, and certificate generation and integration</li>
+        <li>Firewall zones and iptables rules for secure traffic control</li>
+      </ul>
+      <h1>Database</h1>
+      <ul class="skills">
+        <li>MySQL server setup, users, backups, and queries</li>
+        <li>MongoDB service management, CRUD operations, monitoring</li>
+      </ul>
+      <h1>Linux Administration</h1>
+      <ul class="skills">
+        <li>systemctl service management and journalctl log analysis</li>
+        <li>Package updates, service restarts, configuration validation</li>
+        <li>Troubleshooting network, storage, and service issues</li>
+        <li>System hardening and resource monitoring</li>
+      </ul>
+      <h1>Linux Skills</h1>
+      <ul class="skills">
+        <li>Install/configure CentOS, VMware, Ubuntu, RHEL, Kali Linux</li>
+        <li>File system management, permissions, ownership</li>
+        <li>Text editing with vi/vim/nano; grep for search and patterns</li>
+        <li>LVM for scalable storage; mount/unmount; performance tools</li>
+        <li>ACLs, encryption, compression, backup and recovery</li>
+      </ul>
+      <h1>Automation</h1>
+      <ul class="skills">
+        <li>Ansible playbooks for package and service management</li>
+        <li>Inventories, variables, roles, handlers; ad-hoc commands</li>
+      </ul>
+      <h1>Storage & File Sharing</h1>
+      <ul class="skills">
+        <li>NFS configuration for centralized file sharing</li>
+        <li>Exports, access control, persistent mounts via /etc/fstab</li>
+      </ul>
+      <h1>CCNA Skills</h1>
+      <ul class="skills">
+        <li>Routing protocols: OSPF, EIGRP, RIP; VLAN and DHCP</li>
+        <li>ACLs, VPNs, network monitoring, IP addressing/subnetting</li>
+      </ul>
+      <h1>Languages</h1>
+      <ul class="skills">
+        <li>English</li>
+        <li>Marathi</li>
+        <li>Hindi</li>
+      </ul>
+    </article>
+    <article id="projects" class="panel">
+      <h1>Projects</h1>
+      <div class="grid">
+        <div class="card" aria-label="Employee Management System">
+          <div class="card-title">Employee Management System</div>
+          <div class="card-desc">Led a team to design and build a management system as a final year project. Coordinated planning, task delegation, and timely delivery. Gained experience in leadership, teamwork, and software development.</div>
+        </div>
+      </div>
+    </article>
+    <article id="contact" class="panel">
+      <h1>Contact</h1>
+      <form id="contact-form" class="contact-form" novalidate>
+        <div class="field">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Your name" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required>
+        </div>
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Tell me about your project" required></textarea>
+        </div>
+        <div class="actions">
+          <button id="send-btn" type="submit">send</button>
+        </div>
+        <div id="form-status" class="form-status" aria-live="polite"></div>
+      </form>
+      <ul class="contact">
+        <li>Phone: +91-9324863145</li>
+        <li>Email: ramgawas55@gmail.com</li>
+        <li>GitHub: github.com/ramgawas55</li>
+      </ul>
+    </article>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <span>© 2026 • Linux-themed professional portfolio</span>
+</footer>
+
+<script src="./main.js"></script>
+</body>
+</html>
