@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="RAM SUNIL GAWAS — Linux-themed">
+<meta property="og:title" content="RAM SUNIL GAWAS • Linux Professional Portfolio">
+<meta property="og:description" content="Cloud & DevOps student focused on Linux, networking, automation, and secure systems.">
+<meta name="theme-color" content="#0b0f10">
 <title>2026 • Linux Professional Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -36,6 +39,13 @@
       <div class="terminal-title">tty0</div>
     </div>
     <div id="terminal-body" class="terminal-body"></div>
+  </section>
+
+  <section class="cta">
+    <button class="btn primary" id="cta-contact" type="button">contact me</button>
+    <button class="btn" id="cta-resume" type="button">download resume</button>
+    <a class="btn" id="cta-github" href="https://github.com/ramgawas55" target="_blank" rel="noopener">github</a>
+    <button class="btn" id="cta-copy-email" type="button">copy email</button>
   </section>
 
   <section class="content">
@@ -114,11 +124,20 @@
           <div class="card-title">Employee Management System</div>
           <div class="card-desc">Led a team to design and build a management system as a final year project. Coordinated planning, task delegation, and timely delivery. Gained experience in leadership, teamwork, and software development.</div>
         </div>
+        <div class="card" aria-label="Linux Automation Lab">
+          <div class="card-title">Linux Automation Lab</div>
+          <div class="card-desc">Provisioned services with Ansible on CentOS/RHEL, implemented idempotent tasks, handlers, roles, and validation checks.</div>
+        </div>
+        <div class="card" aria-label="Network Configurations">
+          <div class="card-title">Network Configurations</div>
+          <div class="card-desc">Configured routing protocols, VLANs, DHCP, and ACLs; verified connectivity and monitored performance using standard tools.</div>
+        </div>
       </div>
     </article>
     <article id="contact" class="panel">
       <h1>Contact</h1>
       <form id="contact-form" class="contact-form" novalidate>
+        <input type="text" id="website" name="website" autocomplete="off" class="sr-only" tabindex="-1" aria-hidden="true">
         <div class="field">
           <label for="name">Name</label>
           <input id="name" name="name" type="text" placeholder="Your name" required>
@@ -141,6 +160,18 @@
         <li>Email: ramgawas55@gmail.com</li>
         <li>GitHub: github.com/ramgawas55</li>
       </ul>
+    </article>
+    <article id="resume" class="panel">
+      <h1>Resume</h1>
+      <p>Use the download button in the toolbar for a print-ready version.</p>
+      <ul class="skills">
+        <li>Cloud & DevOps student with strong Linux and networking foundation</li>
+        <li>Automation with Ansible; secure services; monitoring and troubleshooting</li>
+        <li>Projects include Employee Management System and Linux Automation Lab</li>
+      </ul>
+      <div class="actions">
+        <button id="print-resume" type="button">print</button>
+      </div>
     </article>
   </section>
 </main>

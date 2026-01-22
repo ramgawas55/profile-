@@ -108,6 +108,33 @@ html, body {
   font-family: "Fira Code", monospace;
   background: radial-gradient(1200px 400px at 50% 0%, rgba(51,255,102,0.08), transparent), var(--card);
 }
+.cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+}
+.btn {
+  appearance: none;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  padding: .6rem 1rem;
+  border-radius: .5rem;
+  cursor: pointer;
+  font-family: "Fira Code", monospace;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+.btn:hover { border-color: var(--accent) }
+.btn.primary {
+  background: linear-gradient(180deg, #0f1519, #0b0f12);
+  border-color: var(--accent-2);
+}
+.btn:focus, .site-nav .nav-link:focus, .actions button:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
 .line {
   display: block;
   color: var(--text);
@@ -197,6 +224,10 @@ h1 {
 }
 .actions button:hover {
   border-color: var(--accent);
+}
+.actions button:disabled {
+  opacity: .6;
+  cursor: not-allowed;
 }
 .form-status {
   min-height: 1.2rem;

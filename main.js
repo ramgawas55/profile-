@@ -5,9 +5,18 @@ const toggleThemeBtn = document.querySelector(".toggle-theme")
 const contactForm = document.getElementById("contact-form")
 const sendBtn = document.getElementById("send-btn")
 const formStatus = document.getElementById("form-status")
+const ctaContact = document.getElementById("cta-contact")
+const ctaResume = document.getElementById("cta-resume")
+const ctaGithub = document.getElementById("cta-github")
+const ctaCopyEmail = document.getElementById("cta-copy-email")
+const printResumeBtn = document.getElementById("print-resume")
 
 function setActive(id) {
   panels.forEach(p => p.classList.toggle("active", p.id === id))
+  navLinks.forEach(n => {
+    const active = n.dataset.section === id
+    n.setAttribute("aria-current", active ? "page" : "false")
+  })
 }
 
 function writeLine(text, delay = 0) {
@@ -78,6 +87,7 @@ function init() {
   setActive(initial)
   boot()
   initContact()
+  initCtas()
 }
 
 document.addEventListener("DOMContentLoaded", init)
@@ -94,6 +104,11 @@ function initContact() {
     const name = String(data.get("name") || "").trim()
     const email = String(data.get("email") || "").trim()
     const message = String(data.get("message") || "").trim()
+    const website = String(data.get("website") || "").trim()
+    if (website) {
+      formStatus.textContent = "failed to send, try again later"
+      return
+    }
     if (!name || !email || !message || !validateEmail(email)) {
       formStatus.textContent = "please fill all fields with a valid email"
       return
@@ -109,10 +124,36 @@ function initContact() {
       if (!res.ok) throw new Error("request failed")
       formStatus.textContent = "sent successfully"
       contactForm.reset()
+      sendBtn.disabled = true
     } catch (err) {
       formStatus.textContent = "failed to send, try again later"
     } finally {
-      sendBtn.disabled = false
+      setTimeout(() => { sendBtn.disabled = false }, 2000)
     }
+  })
+}
+
+function initCtas() {
+  if (ctaContact) ctaContact.addEventListener("click", () => {
+    location.hash = "contact"
+    setActive("contact")
+    writeLine("open contact")
+  })
+  if (ctaResume) ctaResume.addEventListener("click", () => {
+    location.hash = "resume"
+    setActive("resume")
+    writeLine("generate resume")
+    window.print()
+  })
+  if (ctaCopyEmail) ctaCopyEmail.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText("ramgawas55@gmail.com")
+      writeLine("copied email")
+    } catch (e) {
+      writeLine("copy failed")
+    }
+  })
+  if (printResumeBtn) printResumeBtn.addEventListener("click", () => {
+    window.print()
   })
 }
